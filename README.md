@@ -24,7 +24,7 @@
 ### 1. Клонування репозиторію
 
 ```bash
-git clone <посилання-на-ваш-репозиторій>
+git clone https://github.com/Sergei-Monastyretskiy/lessonJS_43.git
 cd lessonJS_42
 ```
 
