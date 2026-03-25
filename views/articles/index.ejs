@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <%= title %>
+            </h1>
+            <nav>
+                <a href="/">Головна</a>
+                <a href="/users">Користувачі</a>
+                <a href="/articles">Статті</a>
+            </nav>
+        </header>
+
+        <main>
+            <% if (typeof error !=='undefined' ) { %>
+                <div class="error-message">
+                    <%= error %>
+                </div>
+                <% } %>
+
+                    <% if (articles && articles.length> 0) { %>
+                        <div class="articles-list">
+                            <% articles.forEach(article=> { %>
+                                <article class="article-card">
+                                    <div class="article-header">
+                                        <h2>
+                                            <%= article.title %>
+                                        </h2>
+                                        <span class="article-id">ID: <%= article.id %></span>
+                                    </div>
+                                    <div class="article-meta">
+                                        <span class="author">Автор: <%= article.author %></span>
+                                        <span class="date">Дата: <%= article.date %></span>
+                                        <span class="views">Перегляди: <%= article.views %></span>
+                                    </div>
+                                    <div class="article-content">
+                                        <p>
+                                            <%= article.content %>
+                                        </p>
+                                    </div>
+                                    <div class="article-actions">
+                                        <a href="/articles/<%= article.id %>" class="btn btn-primary">Читати далі</a>
+                                    </div>
+                                </article>
+                                <% }); %>
+                        </div>
+                        <% } else { %>
+                            <p class="no-data">Статей не знайдено</p>
+                            <% } %>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Express MVC Server. Шаблонізатор: EJS</p>
+        </footer>
+    </div>
+</body>
+
+</html>

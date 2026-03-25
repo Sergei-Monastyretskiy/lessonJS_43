@@ -1,0 +1,41 @@
+doctype html
+html(lang='uk')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet' href='/css/styles.css')
+  body
+    .container
+      header
+        h1= title
+        nav
+          a(href='/') Головна
+          a(href='/users') Користувачі
+          a(href='/articles') Статті
+      
+      main
+        .user-detail
+          .detail-card
+            .detail-header
+              h2= user.name
+              span.badge ID: #{user.id}
+            
+            .detail-body
+              .detail-row
+                .detail-label Email:
+                .detail-value= user.email
+              
+              .detail-row
+                .detail-label Вік:
+                .detail-value #{user.age} років
+              
+              .detail-row
+                .detail-label Місто:
+                .detail-value= user.city
+            
+            .detail-footer
+              a.btn.btn-secondary(href='/users') ← Назад до списку
+      
+      footer
+        p &copy; 2026 Express MVC Server. Шаблонізатор: PUG

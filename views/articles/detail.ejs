@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>
+                <%= title %>
+            </h1>
+            <nav>
+                <a href="/">Головна</a>
+                <a href="/users">Користувачі</a>
+                <a href="/articles">Статті</a>
+            </nav>
+        </header>
+
+        <main>
+            <div class="article-detail">
+                <div class="detail-card">
+                    <div class="detail-header">
+                        <h2>
+                            <%= article.title %>
+                        </h2>
+                        <span class="badge">ID: <%= article.id %></span>
+                    </div>
+
+                    <div class="article-meta-detail">
+                        <div class="meta-item">
+                            <strong>Автор:</strong>
+                            <%= article.author %>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Дата публікації:</strong>
+                            <%= article.date %>
+                        </div>
+                        <div class="meta-item">
+                            <strong>Кількість переглядів:</strong>
+                            <%= article.views %>
+                        </div>
+                    </div>
+
+                    <div class="detail-body">
+                        <div class="article-full-content">
+                            <p>
+                                <%= article.content %>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="detail-footer">
+                        <a href="/articles" class="btn btn-secondary">← Назад до списку</a>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Express MVC Server. Шаблонізатор: EJS</p>
+        </footer>
+    </div>
+</body>
+
+</html>

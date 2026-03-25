@@ -1,0 +1,89 @@
+doctype html
+html(lang='uk')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    title= title
+    link(rel='stylesheet' href='/css/styles.css')
+    style.
+      .home-content {
+        text-align: center;
+        padding: 40px 20px;
+      }
+      .welcome-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        padding: 40px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+      }
+      .welcome-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      .features {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+      .feature-card {
+        background: white;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+      }
+      .feature-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      }
+      .feature-card h3 {
+        color: #667eea;
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+      }
+      .feature-card p {
+        color: #666;
+        line-height: 1.6;
+        margin-bottom: 20px;
+      }
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+      }
+  body
+    .container
+      header
+        h1= title
+        nav
+          a(href='/') Головна
+          a(href='/users') Користувачі
+          a(href='/articles') Статті
+      
+      main
+        .home-content
+          .welcome-section
+            h2 Вітаємо в Express MVC Server!
+            p Це демонстраційний проект, який показує використання шаблонізаторів PUG та EJS в Node.js з Express
+          
+          .features
+            .feature-card
+              h3 👥 Користувачі (PUG)
+              p Перегляд списку користувачів та деталей кожного користувача з використанням шаблонізатора PUG
+              a.btn.btn-primary(href='/users') Переглянути користувачів
+            
+            .feature-card
+              h3 📝 Статті (EJS)
+              p Перегляд списку статей та повного вмісту кожної статті з використанням шаблонізатора EJS
+              a.btn.btn-primary(href='/articles') Переглянути статті
+          
+          .cta-buttons
+            a.btn.btn-primary(href='/users') Почати з користувачів
+            a.btn.btn-secondary(href='/articles') Почати зі статей
+      
+      footer
+        p &copy; 2026 Express MVC Server. Шаблонізатори: PUG і EJS
