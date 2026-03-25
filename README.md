@@ -25,7 +25,7 @@
 
 ```bash
 git clone https://github.com/Sergei-Monastyretskiy/lessonJS_43.git
-cd lessonJS_42
+cd lessonJS_43
 ```
 
 ### 2. Встановлення залежностей
@@ -59,7 +59,7 @@ npm run dev
 ## 📁 Структура проекту
 
 ```
-lessonJS_42/
+lessonJS_43/
 ├── public/                 # Статичні файли
 │   └── css/
 │       └── styles.css      # Загальні стилі для всіх сторінок
